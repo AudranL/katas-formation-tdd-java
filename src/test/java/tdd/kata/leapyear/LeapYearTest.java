@@ -18,4 +18,9 @@ class LeapYearTest {
 	void all_years_divisible_by_400_is_leap_year(int year) {
 		assertThat(LeapYear.isLeapYear(year)).isTrue();
 	}
+
+	@Test
+	void year_2008_is_leap_year(){
+		assertThat(LeapYear.isLeapYear(2008)).isTrue();
+	}
 }
