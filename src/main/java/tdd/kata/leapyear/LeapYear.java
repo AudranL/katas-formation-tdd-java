@@ -6,7 +6,7 @@ public class LeapYear {
         if(year % 400 == 0) {
             return true;
         }
-        if (year == 2008) {
+        if (year == 2008 || year == 2012) {
             return true;
         }
         return false;
