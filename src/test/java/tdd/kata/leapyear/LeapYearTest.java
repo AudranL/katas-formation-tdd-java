@@ -24,4 +24,9 @@ class LeapYearTest {
 	void all_years_divisible_by_4_but_not_by_100_are_leap_years(int year){
 		assertThat(LeapYear.isLeapYear(year)).isTrue();
 	}
+
+	@Test
+	void year_1700_is_not_leap() {
+		assertThat(LeapYear.isLeapYear(1700)).isFalse();
+	}
 }
