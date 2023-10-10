@@ -20,4 +20,11 @@ class LeapYearTest {
 	void year_1600_is_leap() {
 		assertThat(LeapYear.isLeapYear(1600)).isTrue();
 	}
+
+	@Test
+	void year_400_is_leap() {
+		assertThat(LeapYear.isLeapYear(400)).isTrue();
+	}
+
+
 }
