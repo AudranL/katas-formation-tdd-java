@@ -19,18 +19,9 @@ class LeapYearTest {
 		assertThat(LeapYear.isLeapYear(year)).isTrue();
 	}
 
-	@Test
-	void year_2008_is_leap_year(){
-		assertThat(LeapYear.isLeapYear(2008)).isTrue();
-	}
-
-	@Test
-	void year_2012_is_leap_year(){
-		assertThat(LeapYear.isLeapYear(2012)).isTrue();
-	}
-
-	@Test
-	void year_2016_is_leap_year(){
-		assertThat(LeapYear.isLeapYear(2016)).isTrue();
+	@ParameterizedTest
+	@ValueSource(ints= {2008, 2012, 2016})
+	void all_years_divisible_by_4_but_not_by_100_are_leap_years(int year){
+		assertThat(LeapYear.isLeapYear(year)).isTrue();
 	}
 }
