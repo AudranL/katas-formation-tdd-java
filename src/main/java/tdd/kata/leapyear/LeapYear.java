@@ -3,7 +3,7 @@ package tdd.kata.leapyear;
 public class LeapYear {
 
 	public static boolean isLeapYear(int year) {
-        if (year == 1700 || year == 1800) {
+        if (year % 100 == 0 && year % 400 != 0) {
             return false;
         }
         if(year % 400 == 0) {
