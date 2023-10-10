@@ -1,6 +1,8 @@
 package tdd.kata.leapyear;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,20 +13,9 @@ class LeapYearTest {
 		assertThat(LeapYear.isLeapYear(2017)).isFalse();
 	}
 
-	@Test
-	void year_2000_is_leap() {
-		assertThat(LeapYear.isLeapYear(2000)).isTrue();
+	@ParameterizedTest
+	@ValueSource(ints= {400, 1600, 2000})
+	void all_years_divisible_by_400_is_leap_year(int year) {
+		assertThat(LeapYear.isLeapYear(year)).isTrue();
 	}
-
-	@Test
-	void year_1600_is_leap() {
-		assertThat(LeapYear.isLeapYear(1600)).isTrue();
-	}
-
-	@Test
-	void year_400_is_leap() {
-		assertThat(LeapYear.isLeapYear(400)).isTrue();
-	}
-
-
 }
