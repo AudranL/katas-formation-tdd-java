@@ -1,18 +1,12 @@
 package tdd.kata.leapyear;
 
-public class LeapYear {
+public interface LeapYear {
 
-	public static boolean isLeapYear(int year) {
+	static boolean isLeapYear(int year) {
         if (isDivisibleBy100ButNotBy400(year)) {
             return false;
         }
-        if(isDivisibleBy400(year)) {
-            return true;
-        }
-        if (isDivisibleBy4(year)) {
-            return true;
-        }
-        return false;
+        return isDivisibleBy400(year) || isDivisibleBy4(year);
     }
 
     private static boolean isDivisibleBy4(int year) {
