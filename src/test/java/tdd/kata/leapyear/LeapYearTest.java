@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LeapYearTest {
 
 	@Test
-	void should_be_true_if_installation_work() {
-		assertThat(true).isTrue();
+	void year_2017_is_not_leap() {
+		assertThat(LeapYear.isLeapYear(2017)).isFalse();
 	}
 }
